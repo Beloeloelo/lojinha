@@ -9,38 +9,26 @@ import {
   Alert,
  } from 'react-native';
 
-export default function LoginsScreen() {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
+export default function Tela2() {
+ 
 
   const handleLogin = () => {
-    Alert.alert('Login', 'Email: ${email}\nSenha: ${senha}');
+    Alert.alert('Pesquisa');
   };
 
   return (
     <View style={styles.container}>
       <Image source={require('../assets/imagem.png')} style={styles.profileImage} />
-      
-      <TextInput
-      style={styles.input}
-      placeholder="Email"
-      keyboardType="email-address"
-      autoCapitalize="none"
-      value={email}
-      onChangeText={setEmail}
-      />
+     
+      <View style={styles.container}>
+       <TextInput
+        style={styles.input}
+        placeholder="Pesquisar..."
 
-    <TextInput
-    style={styles.input}
-    placeholder="Senha"
-    secureTextEntry
-    value={senha}
-    onChangeText={setSenha}
-    />
+        />
+    </View>
 
-    <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Entrar</Text>
-      </TouchableOpacity>
+    
 
       <TouchableOpacity>
         <Text style={styles.registerText}>Ainda não possui uma conta?</Text>
@@ -55,7 +43,7 @@ const styles = StyleSheet.create({
     padding: 24,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#F5F5F5',
+    backgroundColor: 'red',
   },
   profileImage: {
     width: 100,
@@ -93,5 +81,3 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
 });
-
-
