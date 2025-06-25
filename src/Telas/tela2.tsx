@@ -1,83 +1,33 @@
-import { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  Alert,
- } from 'react-native';
+// src/screens/HomeScreen.js
+import React from 'react';
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 
-export default function Tela2() {
- 
-
-  const handleLogin = () => {
-    Alert.alert('Pesquisa');
-  };
-
+export default function HomeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Image source={require('../assets/imagem.png')} style={styles.profileImage} />
-     
-      <View style={styles.container}>
-       <TextInput
-        style={styles.input}
-        placeholder="Pesquisar..."
-
-        />
-    </View>
-
-    
-
-      <TouchableOpacity>
-        <Text style={styles.registerText}>Ainda não possui uma conta?</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView style={styles.container}>
+      <Text style={styles.title}>SPRING FLOWER</Text>
+      <View style={styles.menu}>
+        <Text>ROUPAS | SAPATOS | ACESSÓRIOS | JOIAS</Text>
+      </View>
+      <View style={styles.grid}>
+        <TouchableOpacity onPress={() => navigation.navigate('Product')}>
+          <Image source={require('../assets/item1.jpg')} style={styles.image} />
+          <Text style={styles.label}>BLUSAS</Text>
+        </TouchableOpacity>
+        {/* Adicione mais itens aqui se quiser */}
+      </View>
+      <Text style={styles.subtitle}>TENDÊNCIAS</Text>
+      {/* Adicione aqui uma seção de tendências */}
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'red',
-  },
-  profileImage: {
-    width: 100,
-    height: 100,
-    marginBottom: 32,
-    borderRadius: 50,
-  },
-  input: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#FFF',
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: '#CCC',
-  },
-  button: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#007BFF',
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 16,
-  },
-  buttonText: {
-    color: '#FFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  registerText: {
-    color: '#007BFF',
-    fontSize: 14,
-    textDecorationLine: 'underline',
-  },
+  container: { flex: 1, padding: 10, backgroundColor: '#fff' },
+  title: { fontSize: 24, textAlign: 'center', marginVertical: 10 },
+  menu: { alignItems: 'center', marginBottom: 20 },
+  grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around' },
+  image: { width: 150, height: 200, borderRadius: 8 },
+  label: { textAlign: 'center', marginVertical: 5 },
+  subtitle: { fontSize: 20, marginVertical: 10 },
 });
