@@ -10,7 +10,7 @@ export default function LoginScreen({ navigation }) {
   const [cpf, setCpf] = useState('');
 
   return (
-    <ImageBackground source={require('../assets/login-bg.jpg')} style={styles.bg}>
+    <ImageBackground source={require('../../assets/foto1.jpeg')} style={styles.bg}>
       <View style={styles.container}>
         <Text style={styles.label}>NOME:</Text>
         <TextInput style={styles.input} placeholder="Digite seu nome" value={nome} onChangeText={setNome} />
@@ -36,6 +36,7 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   bg: { flex: 1, resizeMode: 'cover' },
   container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: 'rgba(255,255,255,0.8)' },
-  label: { marginTop: 10 },
-  input: { borderWidth: 1, padding: 10, marginBottom: 10, backgroundColor: '#fff' },
+  label: { marginTop: -6 },
+  input: { borderWidth: 1, padding: 5, marginBottom: 5, backgroundColor: '#fff' },
+  Button: {backgroundColor: 'black'}
 });
